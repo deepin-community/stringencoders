@@ -1,0 +1,71 @@
+stringencoders (3.10.3+git20180306-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove patch 0004-runs-host-code-generators-during-build.patch to fix
+    FTBFS (Closes: #914636)
+
+ -- Ivo De Decker <ivodd@debian.org>  Sun, 22 Mar 2020 11:49:25 +0100
+
+stringencoders (3.10.3+git20180306-1) unstable; urgency=medium
+
+  * Updated to a slightly newer upstream version
+  * Added FTCBFS fixing patch from bug tracker (Closes: #903502) 
+
+ -- Lennart Weller <lhw@ring0.de>  Tue, 20 Nov 2018 10:50:46 +0100
+
+stringencoders (3.10.3+git20160924-3) unstable; urgency=medium
+
+  * Removed extern_c includes from the headers in -dev package (Closes: #846750)
+
+ -- Lennart Weller <lhw@ring0.de>  Wed, 07 Dec 2016 16:46:36 +0100
+
+stringencoders (3.10.3+git20160924-2) unstable; urgency=low
+
+  * Reintroduced an old Patch for wrong casts in test cases on
+    some architectures
+  * Added modp_stdint.h to the -dev package install (Closes: #841612)
+
+ -- Lennart Weller <lhw@ring0.de>  Wed, 23 Nov 2016 19:33:53 +0100
+
+stringencoders (3.10.3+git20160924-1) unstable; urgency=medium
+
+
+  [ Lennart Weller ]
+  * Update to new upstream version
+    - Upstream has dropped the support for the (incomplete) MessagePack API
+  * Removed upstreamed patches
+
+  [ Daniel Knezevic ]
+  * Disable -Werror flag for builds (Closes: #843154)
+  * Remove distinction for big endian on shift (Closes: #843155)
+
+ -- Lennart Weller <lhw@ring0.de>  Tue, 15 Nov 2016 15:08:47 +0100
+
+stringencoders (3.10.3+git20160118-1) unstable; urgency=low
+
+  [ Lennart Weller ]
+  * New upstream release
+  * Updated Standards-Version to 3.9.7
+  * Updated watchfile
+  * Updated homepage
+  * Updated exported symbols
+  * Removed unnecessary patches 
+
+  [ Sebastian Reichel ]
+  * Use secure VCS urls
+  * Updated Standards-Version to 3.9.8
+  * Switch to compat level 10
+
+ -- Sebastian Reichel <sre@debian.org>  Wed, 19 Oct 2016 02:13:35 +0200
+
+stringencoders (3.10.3-2) unstable; urgency=low
+
+  * Fix for build from source errors on some architectures. (Closes: #695024)
+
+ -- Lennart Weller <lhw@ring0.de>  Thu, 06 Dec 2012 21:38:27 +0100
+
+stringencoders (3.10.3-1) unstable; urgency=low
+
+  * Initial release. (Closes: #593462)
+
+ -- Lennart Weller <lhw@ring0.de>  Thu, 25 Oct 2012 16:53:44 +0200

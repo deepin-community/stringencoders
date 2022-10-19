@@ -1,0 +1,70 @@
+libmodpbase64.so.0 libmodpbase64-0 #MINVER#
+ modp_b16_decode@Base 3.10.3
+ modp_b16_encode@Base 3.10.3
+ modp_b2_decode@Base 3.10.3
+ modp_b2_encode@Base 3.10.3
+ modp_b64_decode@Base 3.10.3
+ modp_b64_encode@Base 3.10.3
+ modp_b64r_decode@Base 3.10.3+git20140712
+ modp_b64r_encode@Base 3.10.3+git20140712
+ modp_b64w_decode@Base 3.10.3
+ modp_b64w_encode@Base 3.10.3
+ modp_b85_decode@Base 3.10.3
+ modp_b85_encode@Base 3.10.3
+ modp_bjavascript_encode@Base 3.10.3
+ modp_bjavascript_encode_strlen@Base 3.10.3
+ modp_burl_decode@Base 3.10.3
+ modp_burl_decode_raw@Base 3.10.3+git20140712
+ modp_burl_encode@Base 3.10.3
+ modp_burl_encode_strlen@Base 3.10.3
+ modp_burl_min_encode@Base 3.10.3
+ modp_burl_min_encode_strlen@Base 3.10.3
+ modp_dtoa2@Base 3.10.3
+ modp_dtoa@Base 3.10.3
+ modp_html_decode_char_at@Base 3.10.3+git20140712
+ modp_itoa10@Base 3.10.3
+ modp_json_add_bool@Base 3.10.3+git20140712
+ modp_json_add_cstring@Base 3.10.3+git20140712
+ modp_json_add_int32@Base 3.10.3+git20140712
+ modp_json_add_null@Base 3.10.3+git20140712
+ modp_json_add_string@Base 3.10.3+git20140712
+ modp_json_add_uint32@Base 3.10.3+git20140712
+ modp_json_add_uint64@Base 3.10.3+git20140712
+ modp_json_ary_close@Base 3.10.3+git20140712
+ modp_json_ary_open@Base 3.10.3+git20140712
+ modp_json_end@Base 3.10.3+git20140712
+ modp_json_init@Base 3.10.3+git20140712
+ modp_json_map_close@Base 3.10.3+git20140712
+ modp_json_map_open@Base 3.10.3+git20140712
+ modp_litoa10@Base 3.10.3
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_bool@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_cstring@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_double@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_int32@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_null@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_string@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_add_uint32@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_ary_open@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_end@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_init@Base 3.10.3+git20140712
+#MISSING: 3.10.3+git20160924-1# modp_msgpk_map_open@Base 3.10.3+git20140712
+ modp_rtrim@Base 3.10.3+git20140712
+ modp_tolower@Base 3.10.3
+ modp_tolower_copy@Base 3.10.3
+ modp_toprint@Base 3.10.3
+ modp_toprint_copy@Base 3.10.3
+ modp_toupper@Base 3.10.3
+ modp_toupper_copy@Base 3.10.3
+ modp_uitoa10@Base 3.10.3
+ modp_uitoa16@Base 3.10.3+git20140712
+ modp_ulitoa10@Base 3.10.3
+ modp_utf8_validate@Base 3.10.3+git20140712
+ modp_xml_decode@Base 3.10.3+git20140712
+ modp_xml_encode@Base 3.10.3+git20140712
+ modp_xml_min_encode_strlen@Base 3.10.3+git20140712
+ modp_xml_parse_dec_entity@Base 3.10.3+git20140712
+ modp_xml_parse_hex_entity@Base 3.10.3+git20140712
+ modp_xml_unicode_char_to_utf8@Base 3.10.3+git20140712
+ modp_xml_validate_unicode@Base 3.10.3+git20140712
+ qsiter_next@Base 3.10.3+git20140712
+ qsiter_reset@Base 3.10.3+git20140712

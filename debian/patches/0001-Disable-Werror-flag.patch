@@ -1,0 +1,21 @@
+From: Daniel Knezevic <daniel.knezevic@imgtec.com>
+Date: Tue, 20 Nov 2018 10:45:54 +0100
+Subject: Disable Werror flag
+
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 24a712a..8fd3458 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -19,7 +19,7 @@ B64WCHARS="-_."
+ AC_ARG_WITH([b64wchars], AC_HELP_STRING([--with-b64wchars=3CHARS],[change b64 web extra chars, default is '-_.']),
+           [B64WCHARS=$withval], [])
+ 
+-EXTRACFLAGS="-Isrc -Wall -Wextra -Werror -Wshadow -Wpointer-arith -Wcast-qual -Wconversion"
++EXTRACFLAGS="-Isrc -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wconversion"
+ # -Wstrict-prototypes
+ # -Wmissing-prototypes
+ 

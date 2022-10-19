@@ -1,0 +1,315 @@
+From: Lennart Weller <lhw@ring0.de>
+Date: Tue, 20 Nov 2018 10:48:59 +0100
+Subject: remove unnecessary includes in addition to adding modp_stdint.h to
+ the package
+
+---
+ src/Makefile.am        | 2 +-
+ src/modp_ascii.h       | 8 ++++++--
+ src/modp_b16.h         | 8 ++++++--
+ src/modp_b2.h          | 8 ++++++--
+ src/modp_b36.h         | 8 ++++++--
+ src/modp_b64.h         | 8 ++++++--
+ src/modp_b64w.h        | 8 ++++++--
+ src/modp_b85.h         | 8 ++++++--
+ src/modp_bjavascript.h | 8 ++++++--
+ src/modp_numtoa.h      | 8 ++++++--
+ src/modp_qsiter.h      | 8 ++++++--
+ src/modp_utf8.h        | 8 ++++++--
+ 12 files changed, 67 insertions(+), 23 deletions(-)
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index add0026..af23d48 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -4,7 +4,7 @@ include_HEADERS = \
+ 	modp_b16.h modp_b64.h modp_b64w.h modp_b64r.h \
+ 	modp_b85.h modp_burl.h modp_bjavascript.h \
+ 	modp_numtoa.h modp_ascii.h modp_b2.h \
+-	modp_qsiter.h modp_xml.h modp_html.h modp_json.h
++	modp_qsiter.h modp_xml.h modp_html.h modp_json.h modp_stdint.h
+ 
+ lib_LTLIBRARIES = libmodpbase64.la
+ libmodpbase64_la_SOURCES = \
+diff --git a/src/modp_ascii.h b/src/modp_ascii.h
+index bb042ea..9bad7ac 100644
+--- a/src/modp_ascii.h
++++ b/src/modp_ascii.h
+@@ -22,7 +22,9 @@
+ #ifndef COM_MODP_STRINGENCODERS_ASCII
+ #define COM_MODP_STRINGENCODERS_ASCII
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /*
+@@ -103,7 +105,9 @@ void modp_toprint_copy(char* dest, const char* str, size_t len);
+  */
+ size_t modp_rtrim(char* str, size_t len);
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <string>
+diff --git a/src/modp_b16.h b/src/modp_b16.h
+index abee6e9..8641ceb 100644
+--- a/src/modp_b16.h
++++ b/src/modp_b16.h
+@@ -21,7 +21,9 @@
+ #ifndef COM_MODP_STRINGENCODERS_B16
+ #define COM_MODP_STRINGENCODERS_B16
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /**
+@@ -63,7 +65,9 @@ size_t modp_b16_decode(char* dest, const char* src, size_t len);
+  */
+ #define modp_b16_decode_len(A) ((A + 1) / 2)
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <cstring>
+diff --git a/src/modp_b2.h b/src/modp_b2.h
+index 037a40f..7b23424 100644
+--- a/src/modp_b2.h
++++ b/src/modp_b2.h
+@@ -20,7 +20,9 @@
+ #ifndef COM_MODP_STRINGENCODERS_B2
+ #define COM_MODP_STRINGENCODERS_B2
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /**
+@@ -62,7 +64,9 @@ size_t modp_b2_decode(char* dest, const char* src, size_t len);
+  */
+ #define modp_b2_decode_len(A) ((A + 1) / 8)
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <string>
+diff --git a/src/modp_b36.h b/src/modp_b36.h
+index cfa52e5..a07d31d 100644
+--- a/src/modp_b36.h
++++ b/src/modp_b36.h
+@@ -27,7 +27,9 @@
+ 
+ #ifndef COM_MODP_STRINGENCODERS_B36
+ #define COM_MODP_STRINGENCODERS_B36
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /**
+@@ -70,7 +72,9 @@ size_t modp_b36_decode(char* dest, const char* src, size_t len);
+  */
+ #define modp_b36_decode_len(A) ((A + 4) / 5 * 4)
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <cstring>
+diff --git a/src/modp_b64.h b/src/modp_b64.h
+index 3e03ac5..7e6f285 100644
+--- a/src/modp_b64.h
++++ b/src/modp_b64.h
+@@ -30,7 +30,9 @@
+ #ifndef COM_MODP_STRINGENCODERS_B64
+ #define COM_MODP_STRINGENCODERS_B64
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /**
+@@ -132,7 +134,9 @@ size_t modp_b64_decode(char* dest, const char* src, size_t len);
+  */
+ #define modp_b64_encode_strlen(A) ((A + 2) / 3 * 4)
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <cstring>
+diff --git a/src/modp_b64w.h b/src/modp_b64w.h
+index 0820867..b683b60 100644
+--- a/src/modp_b64w.h
++++ b/src/modp_b64w.h
+@@ -25,7 +25,9 @@
+ #ifndef COM_MODP_STRINGENCODERS_B64W
+ #define COM_MODP_STRINGENCODERS_B64W
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /**
+@@ -126,7 +128,9 @@ size_t modp_b64w_decode(char* dest, const char* src, size_t len);
+  */
+ #define modp_b64w_encode_strlen(A) ((A + 2) / 3 * 4)
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <cstring>
+diff --git a/src/modp_b85.h b/src/modp_b85.h
+index 93500da..0cfcedc 100644
+--- a/src/modp_b85.h
++++ b/src/modp_b85.h
+@@ -27,7 +27,9 @@
+ 
+ #ifndef COM_MODP_STRINGENCODERS_B85
+ #define COM_MODP_STRINGENCODERS_B85
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ /**
+@@ -70,7 +72,9 @@ size_t modp_b85_decode(char* dest, const char* src, size_t len);
+  */
+ #define modp_b85_decode_len(A) ((A + 4) / 5 * 4)
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <cstring>
+diff --git a/src/modp_bjavascript.h b/src/modp_bjavascript.h
+index 90741a1..d24e71f 100644
+--- a/src/modp_bjavascript.h
++++ b/src/modp_bjavascript.h
+@@ -34,7 +34,9 @@
+ 
+ #include "modp_stdint.h"
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ 
+ /**
+  * "javascript" encode a stirng
+@@ -67,7 +69,9 @@ size_t modp_bjavascript_encode(char* dest, const char* str, size_t len);
+  */
+ size_t modp_bjavascript_encode_strlen(const char* str, size_t len);
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #ifdef __cplusplus
+ #include <cstring>
+diff --git a/src/modp_numtoa.h b/src/modp_numtoa.h
+index 863aa17..844da63 100644
+--- a/src/modp_numtoa.h
++++ b/src/modp_numtoa.h
+@@ -24,7 +24,9 @@
+ #ifndef COM_MODP_STRINGENCODERS_NUMTOA_H
+ #define COM_MODP_STRINGENCODERS_NUMTOA_H
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ 
+ #include "modp_stdint.h"
+ 
+@@ -95,6 +97,8 @@ size_t modp_dtoa2(double value, char* buf, int precision);
+  */
+ char* modp_uitoa16(uint32_t value, char* buf, int final);
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #endif
+diff --git a/src/modp_qsiter.h b/src/modp_qsiter.h
+index a0c3132..d3d4ddc 100644
+--- a/src/modp_qsiter.h
++++ b/src/modp_qsiter.h
+@@ -3,7 +3,9 @@
+ 
+ #include <string.h>
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ 
+ /**
+  * \file modp_qsiter.h
+@@ -66,6 +68,8 @@ void qsiter_reset(struct qsiter_t* qsi, const char* s, size_t len);
+  */
+ int qsiter_next(struct qsiter_t* qsi);
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ 
+ #endif /* MODP_QSITER */
+diff --git a/src/modp_utf8.h b/src/modp_utf8.h
+index 5186f5c..9017b12 100644
+--- a/src/modp_utf8.h
++++ b/src/modp_utf8.h
+@@ -20,7 +20,9 @@
+ #ifndef COM_MODP_UTF8
+ #define COM_MODP_UTF8
+ 
+-#include "extern_c_begin.h"
++#ifdef __cplusplus
++extern "C" {
++#endif
+ #include "modp_stdint.h"
+ 
+ #define MODP_UTF8_OK 0
+@@ -34,5 +36,7 @@
+  */
+ int modp_utf8_validate(const char* src, size_t len);
+ 
+-#include "extern_c_end.h"
++#ifdef __cplusplus
++}
++#endif
+ #endif /* ifndef modp_utf8 */

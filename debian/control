@@ -1,0 +1,33 @@
+Source: stringencoders
+Section: libs
+Priority: optional
+Maintainer: Lennart Weller <lhw@ring0.de>
+Uploaders: Sebastian Reichel <sre@debian.org>
+Standards-Version: 4.2.1
+Vcs-git: https://salsa.debian.org/lhw-guest/stringencoders.git
+Vcs-Browser: https://salsa.debian.org/lhw-guest/stringencoders
+Homepage: https://github.com/client9/stringencoders
+Build-Depends: debhelper (>= 11~)
+
+Package: libmodpbase64-0
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: collection of high performance c-string transformations 
+ This implementation is frequently 2x faster than standard implementations.
+ The transformations include base64, base16, base85, base2, url and javascript
+ escaping, as well as fast number to string and upper/lower case conversions.
+
+Package: libmodpbase64-dev
+Section: libdevel
+Architecture: any
+Depends: libmodpbase64-0 (= ${binary:Version}),
+         ${misc:Depends}
+Description: collection of high performance c-string transformations (development files)
+ This implementation is frequently 2x faster than standard implementations.
+ The transformations include base64, base16, base85, base2, url and javascript
+ escaping, as well as fast number to string and upper/lower case conversions.
+ .
+ Development files
